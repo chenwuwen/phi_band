@@ -1,0 +1,101 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.kanyun.phi_band.base.base">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="Android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REAL_GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application>
+
+
+        <!--添加7.0以上文件访问授权-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="cn.kanyun.phi_band.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="cn.kanyun.phi_band.base.train.ui.RecTrainHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.base.train.ui.RecTrainListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.base.train.ui.RecTrainDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.base.train.ui.TrainPlanActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.base.search.SearchActivity"
+            android:theme="@style/SearchWhiteBGTheme" />
+
+
+        <activity
+            android:name="cn.kanyun.phi_band.base.takephoto.picker.MultiPickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/tp_app_theme.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.base.takephoto.picker.SinglePickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/tp_app_theme.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.base.takephoto.preview.MultiPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/tp_app_theme.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.base.takephoto.preview.SinglePreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/tp_app_theme.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.base.qrscan.CaptureActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="cn.kanyun.phi_band.base.SimpleWebViewActivity" />
+    </application>
+</manifest>

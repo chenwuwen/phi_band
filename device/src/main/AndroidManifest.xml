@@ -1,0 +1,55 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.kanyun.phi_band.device">
+
+    <application>
+
+        <activity android:name="cn.kanyun.phi_band.device.ui.binding.DeviceBindingOptionsActivity" />
+        <activity android:name="cn.kanyun.phi_band.device.ui.binding.DeviceQrBindingOptionsActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.DeviceDetailsActivity"
+            android:label="@string/link_device_details_title" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.DeviceSelectActivity"
+            android:label="@string/link_device_details_title" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.menu.DeviceMenusActivity"
+            android:label="@string/link_device_details_title" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.setting.DeviceDialSettingActivity"
+            android:label="@string/link_device_dial_setting" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.setting.DialEditActivity"
+            android:hardwareAccelerated="false"
+            android:label="@string/link_device_dial_custom_define" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.setting.AlarmSettingsActivity"
+            android:label="@string/link_device_alarm_setting" />
+        <activity android:name="cn.kanyun.phi_band.device.ui.setting.AlarmDetailActivity" />
+        <activity android:name="cn.kanyun.phi_band.device.ui.setting.DeviceGeneralSettingsActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.weather.WeatherSettingsActivity"
+            android:label="@string/link_device_weather_setting" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.weather.WeatherSelectCityActivity"
+            android:label="@string/link_device_weather_select_city" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.setting.NotificationSettingsActivity"
+            android:label="@string/link_device_notification_setting" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.firmware.FotaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.firmware.FotaByBtActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.device.ui.DeviceActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver android:name="cn.kanyun.phi_band.device.ui.weather.WeatherAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.phicomm.link.ui.device.WEATHER_ALARM" />
+                <action android:name="com.phicomm.link.common.util.WeatherDataUtils.WEATHER_SYNC" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

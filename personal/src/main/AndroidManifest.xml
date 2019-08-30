@@ -1,0 +1,63 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.kanyun.phi_band.personal" >
+    <application>
+
+        <activity android:name="cn.kanyun.phi_band.personal.ui.LoadingActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.personal.ui.LoginRigisterActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="cn.kanyun.phi_band.personal.ui.LoginActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.login" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="cn.kanyun.phi_band.personal.ui.ForgetPasswordActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.register.RegisterActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.info.PersonInfoSettingActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.PersonInfoModifyActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.AboutActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.AccountManageActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.CheckPhoneActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.AddPhoneActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.ModifyPasswordActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.body.BodyDataActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.IntegralActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.RunClassActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.ShowImageActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.BindPhoneActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.CheckUpdateActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.personal.ui.location.LocationActivity"
+            android:configChanges="layoutDirection|locale"
+            android:theme="@style/link_personal_PersonInfoModify" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.MyTargetActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.StepGoalActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.SleepGoalActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.personal.ui.feedback.AdviceFeedbackActivity"
+            android:theme="@style/WebCustomDialog" />
+        <activity
+            android:name="cn.kanyun.phi_band.personal.ui.feedback.WebFeedbackActivity"
+            android:theme="@style/WebCustomDialog" />
+        <activity
+            android:name="cn.kanyun.phi_band.personal.ui.PersonInfoItemModifyActivity"
+            android:theme="@style/link_personal_PersonInfoModify" />
+        <activity
+            android:name="cn.kanyun.phi_band.personal.ui.PersonInfoHeightModifyActivity"
+            android:theme="@style/link_personal_PersonInfoModify" />
+        <activity
+            android:name="cn.kanyun.phi_band.personal.ui.PersonInfoWeightModifyActivity"
+            android:theme="@style/link_personal_PersonInfoModify" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.SettingActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.FootprintActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.MyMedalActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.MedalDetailActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.RegistrationCardActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.mybest.MyBestActivity" />
+        <activity android:name="cn.kanyun.phi_band.personal.ui.UserQrCodeActivity" />
+
+    </application>
+</manifest>

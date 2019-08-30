@@ -1,0 +1,76 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.kanyun.phi_band.sport">
+
+
+    <application>
+
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.SportInformationActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.SportFullScreenActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.MapTrackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.TrainDetailActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.TargetTrainDetailActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.TrainHistoryActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.NewTrainAlarmSettingActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.NewTrainDetailAlarmDetailActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.StepFullScreenActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.runningdetails.RunningDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.heartrate.HeartRateDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.AddTrainPlanActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.PhiTrainLevelActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.PhiDifficultyLevelActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.PhiTrainStartDateActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.PhiDifficultyDetailsActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.CustomRunTrainActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.CustomRunTrainHistoryActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.TargetTrainActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.TargetTypeActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.TargetDistanceActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.TargetTimeActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.TargetCaloryActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.addplan.TargetCountActivity" />
+        <activity android:name="cn.kanyun.phi_band.sport.ui.training.switchplan.TrainExperienceActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.RunningDetailsCurrentDayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.home.heartrate.HeartRateActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.home.heartrate.HeartRateActivity2"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.TrainActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.training.sleep.SleepSecondActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.sport.ui.home.HomeADWebActivity"
+            android:launchMode="singleTask" />
+
+
+    </application>
+</manifest>
+

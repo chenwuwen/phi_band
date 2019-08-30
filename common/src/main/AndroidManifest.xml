@@ -1,0 +1,86 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.kanyun.phi_band.common" >
+
+    <application>
+
+
+        <receiver android:name="cn.kanyun.phi_band.common.transaction.network.NetworkConnectChangedReceiver" />
+
+        <activity android:name="cn.kanyun.phi_band.common.ui.widgets.clipImage.ClipImageActivity" />
+        <activity android:name="cn.kanyun.phi_band.common.ui.WebViewActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.common.transaction.push.SswoActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/onePixel" />
+
+        <receiver
+            android:name="cn.kanyun.phi_band.common.transaction.push.SswoReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="cn.kanyun.phi_band.common.transaction.push.PushService" />
+        <service
+            android:name="cn.kanyun.phi_band.common.transaction.push.PushJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="cn.kanyun.phi_band.common.transaction.notification.NotifyService"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="cn.kanyun.phi_band.common.ui.QrScannerActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="cn.kanyun.phi_band.common.ui.ShareActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/GrayBGTheme" />
+
+        <service android:name="cn.kanyun.phi_band.common.transaction.download.UpdateVersionService" />
+        <service android:name="cn.kanyun.phi_band.common.transaction.bluetooth.BluetoothService" />
+        <service android:name="cn.kanyun.phi_band.common.transaction.http.SyncService" />
+
+        <receiver android:name="cn.kanyun.phi_band.common.transaction.BootReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.kanyun.phi_band.common.transaction.StateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.kanyun.phi_band.common.transaction.TimeSetReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.kanyun.phi_band.common.transaction.PhoneReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.kanyun.phi_band.common.transaction.bluetooth.AutoConnectReceiver">
+            <intent-filter>
+                <action android:name="com.phicomm.link.AUTO_CONNECT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.kanyun.phi_band.common.transaction.NotificationReceiver" />
+    </application>
+</manifest>

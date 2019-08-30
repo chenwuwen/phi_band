@@ -1,29 +1,86 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
-        applicationId "cn.kanyun.ph_band"
-        minSdkVersion 24
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId "cn.kanyun.phi_band"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        设置支持dataBinding,这样就引入了DataBinding
+        dataBinding {
+            enabled = true
+        }
+
+//        ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
+
+//    buildTypes主要就是配置发布版本和测试版本的一些配置以及混淆文件等
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+//    productFlavors主要是用来做多渠道打包等操作会用到
+//    如果你的应用会使用到不同的API_URL，不同的版本号，相同的代码需要生成不同的apk文件等等，都可以在productFlavors上做文章
+//    https://www.jianshu.com/p/81f9f235535d
+//    https://juejin.im/post/5addcedf51882567183ebd21
+    productFlavors {
+
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    if (isModule) {
+        api project(':device')
+        api project(':common')
+        api project(':sport')
+        api project(':personal')
+        api project(':rungroup')
+        api project(':dynamic')
+        api project(':base')
+    }
+    implementation rootProject.ext.dependencies["appcompat-androidx"]
+    implementation rootProject.ext.dependencies["constraintlayout"]
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.google.zxing:core:3.3.3'
+//    替代EventBus的消息传递组件 https://github.com/JeremyLiao/LiveEventBus
+    implementation rootProject.ext.dependencies["live-event-bus-x"]
+
+//    二维码
+    implementation rootProject.ext.dependencies["zxing"]
+
+//    定制不一样的Toast： https://github.com/GrenderG/Toasty
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+
+
+//    打印日志
+    implementation rootProject.ext.dependencies["logger"]
+
+//    图标库
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'top.androidman:superbutton:1.0.1'
+
+    implementation 'com.google.android.material:material:1.1.0-alpha09'
+
+
 }

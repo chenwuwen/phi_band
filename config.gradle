@@ -1,0 +1,26 @@
+ext {
+    android = [
+            compileSdkVersion: 28,  // 用于Gradle编译项目的工具版本
+            buildToolsVersion: "29.0.0",  // 用于Gradle编译项目的工具版本
+            minSdkVersion    : 24,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    dependencies = [
+            "appcompat-androidx": 'androidx.appcompat:appcompat:1.0.2',
+            "live-event-bus-x"  : 'com.jeremyliao:live-event-bus-x:1.4.4',
+            "zxing"             : 'com.google.zxing:core:3.3.3',
+            "constraintlayout"  : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            "logger"  : 'com.orhanobut:logger:2.2.0',
+            "arouter-api" : 'com.alibaba:arouter-api:1.5.0',
+            "arouter-compiler" : 'com.alibaba:arouter-compiler:1.2.2'
+    ]
+
+    dependentVersion = [
+            roomVersion : '2.1.0',
+    ]
+    //这里直接使用了项目根目录下的gradle.properties文件中的配置项,需要注意的是String 类型的可以直接使用,其他类型的则不行
+    isModule = IS_MODULE.toBoolean()
+}

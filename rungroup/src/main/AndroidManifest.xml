@@ -1,0 +1,53 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.kanyun.phi_band.rungroup" >
+    <application>
+
+        <activity android:name="cn.kanyun.phi_band.rungroup.group.MyRunGroupActivity" />
+        <activity android:name="cn.kanyun.phi_band.rungroup.group.RunGroupHomeActivity" />
+        <activity android:name="cn.kanyun.phi_band.rungroup.group.MoreRecommendedGroupActivity" />
+        <activity android:name="cn.kanyun.phi_band.rungroup.group.create.GroupCreationActivity" />
+        <activity android:name="cn.kanyun.phi_band.rungroup.location.LocationPOIActivity" />
+        <activity android:name="cn.kanyun.phi_band.rungroup.settings.GroupSettingsActivity" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.detail.GroupDetailsActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/GroupDetailsTheme" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.detail.qrcode.ShowQRCodeActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/TransparentTheme" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.member.ui.MemberManageActivity"
+            android:theme="@style/WhiteBGTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.member.ui.FriendsManageActivity"
+            android:theme="@style/WhiteBGTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.groupactivity.GroupactivityNewActivity"
+            android:theme="@style/WhiteBGTheme" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.settings.EditActivity"
+            android:theme="@style/WhiteBGTheme" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.groupactivity.GroupActivityMember"
+            android:theme="@style/WhiteBGTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.ui.RunGroupCaptureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.album.photo.AlbumPhotoActivity"
+            android:theme="@style/WhiteBGTheme" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.album.preview.PhotoPreviewActivity"
+            android:theme="@style/WhiteBGTheme" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.album.add.AlbumCreateActivity"
+            android:theme="@style/WhiteBGTheme" />
+        <activity
+            android:name="cn.kanyun.phi_band.rungroup.group.album.add.AlbumCreatePreview"
+            android:theme="@style/WhiteBGTheme" />
+    </application>
+</manifest>

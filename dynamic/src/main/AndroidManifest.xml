@@ -1,0 +1,68 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.kanyun.phi_band.dynamic">
+
+    <application>
+
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.imgpreview.ImageDetailsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.personalhomepage.HomePageActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.personalhomepage.follow.FollowActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.postdynamic.PostDynamicActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.postdynamic.atfriends.AtFriendListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.postdynamic.topic.TopicListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.postdynamic.PostDynamicLocationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.dynamicdetail.DynamicDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.dynamicdetail.comment.CommentActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.dynamicdetail.MomentsDynamicDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.moments.comment.CommentLikeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.moments.atme.AtMeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.postdynamic.PreviewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.ninegridimageview.ImagePreview.GPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.moments.MomentsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.moments.conversation.detail.ConversationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.postdynamic.topic.CreateTopicActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.moments.MentionMeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.kanyun.phi_band.dynamic.personalhomepage.aboutme.PhotoWallDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+    </application>
+</manifest>

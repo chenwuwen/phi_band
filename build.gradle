@@ -1,4 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+//在rootProject下的build.gradle中：buildscript的repositories和allprojects的repositories有什么区别：
+//1、 buildscript里是[gradle脚本]执行所需依赖，分别是对应的maven库和插件
+//2、 allprojects里是项目本身需要的依赖，比如代码中某个类是打包到maven私有库中的，那么在allprojects—>repositories中需要配置maven私有库，而不是buildscript中，不然找不到。
 
 buildscript {
     repositories {
@@ -8,17 +11,22 @@ buildscript {
         maven { url "http://dl.bintray.com/populov/maven" }
         maven { url "https://jitpack.io" }
         google()
-        
+
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath 'com.android.tools.build:gradle:3.5.0'
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+//应用config.gradle：子module访问父目录下的gradle,应该在父目录下的gradle配置(之前我都是把这行配置在各个子module中,但是会提示找不到,因此配置在此处,子module也是可以使用的)
+apply from: 'config.gradle'
+
+//这里不能去配置项目依赖
 allprojects {
+//    这个repositories是指项目中使用的依赖,从哪里获取
     repositories {
         mavenLocal()
         mavenCentral()
@@ -26,7 +34,7 @@ allprojects {
         maven { url "http://dl.bintray.com/populov/maven" }
         maven { url "https://jitpack.io" }
         google()
-        
+
     }
 }
 
