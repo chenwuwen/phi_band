@@ -2,6 +2,8 @@
 <!--设置 backGround的时候，我们的selector状态选择器存放在res - drawable 下-->
 <!--    设置TextColor属性的时候，我们的selector状态选择器存放在res - color 下-->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/colorPrimary" android:state_focused="true"/>
+<!--    <item android:color="@color/colorPrimary" android:state_focused="true"/>-->
+    <item android:color="@color/colorPrimary" android:state_selected="true"/>
+<!--    <item android:color="@color/colorPrimary" android:state_enabled="true"/>-->
     <item android:color="#e6e6e6e6" />
 </selector>

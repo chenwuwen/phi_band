@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">personal</string>
+    <string name="personal_resources_prefix_app_name">personal</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="personal_resources_prefix_hello_blank_fragment">Hello blank fragment</string>
 </resources>

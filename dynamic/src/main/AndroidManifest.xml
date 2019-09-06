@@ -1,68 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.kanyun.phi_band.dynamic">
 
     <application>
-
+        <activity android:name=".ui.activity.DynamicActivity"></activity>
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.imgpreview.ImageDetailsActivity"
+            android:name=".imgpreview.ImageDetailsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.personalhomepage.HomePageActivity"
+            android:name=".personalhomepage.HomePageActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.personalhomepage.follow.FollowActivity"
+            android:name=".personalhomepage.follow.FollowActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.postdynamic.PostDynamicActivity"
+            android:name=".postdynamic.PostDynamicActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.postdynamic.atfriends.AtFriendListActivity"
+            android:name=".postdynamic.atfriends.AtFriendListActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.postdynamic.topic.TopicListActivity"
+            android:name=".postdynamic.topic.TopicListActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.postdynamic.PostDynamicLocationActivity"
+            android:name=".postdynamic.PostDynamicLocationActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.dynamicdetail.DynamicDetailActivity"
+            android:name=".dynamicdetail.DynamicDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.dynamicdetail.comment.CommentActivity"
+            android:name=".dynamicdetail.comment.CommentActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.dynamicdetail.MomentsDynamicDetailActivity"
+            android:name=".dynamicdetail.MomentsDynamicDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.moments.comment.CommentLikeActivity"
+            android:name=".moments.comment.CommentLikeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.moments.atme.AtMeActivity"
+            android:name=".moments.atme.AtMeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.postdynamic.PreviewActivity"
+            android:name=".postdynamic.PreviewActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.ninegridimageview.ImagePreview.GPreviewActivity"
+            android:name=".ninegridimageview.ImagePreview.GPreviewActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.moments.MomentsActivity"
+            android:name=".moments.MomentsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.moments.conversation.detail.ConversationActivity"
+            android:name=".moments.conversation.detail.ConversationActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.postdynamic.topic.CreateTopicActivity"
+            android:name=".postdynamic.topic.CreateTopicActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.moments.MentionMeActivity"
+            android:name=".moments.MentionMeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="cn.kanyun.phi_band.dynamic.personalhomepage.aboutme.PhotoWallDetailsActivity"
+            android:name=".personalhomepage.aboutme.PhotoWallDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
     </application>
+
 </manifest>

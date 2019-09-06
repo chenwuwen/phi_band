@@ -14,13 +14,16 @@ import java.util.TimerTask;
 import cn.kanyun.phi_band.R;
 import top.androidman.SuperButton;
 
+/**
+ * 开屏页
+ */
 public class SplashActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     /**
      * 跳过倒计时提示5秒
      */
-    private int recLen = 5;
+    private int recLen = 2;
 
     /**
      * 跳过按钮
@@ -70,8 +73,9 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    recLen--;
+                    skipButton.setVisibility(View.VISIBLE);
                     skipButton.setText(getString(R.string.skip_str) + recLen);
+                    recLen--;
                     if (recLen < 0) {
                         timer.cancel();
                         skipButton.setVisibility(View.GONE);//倒计时到0隐藏字体

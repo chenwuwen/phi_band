@@ -1,15 +1,10 @@
-// 判断是作为Application来运行还是作为Library来运行,isModule变量来自根目录下的config.gradle文件中,由于项目根目录下的build.gradle文件apply from 了config.gradle。所以子模块可以直接使用
+//该模块特殊,只用来做Library
+apply plugin: 'com.android.library'
 
-if (isModule) {
-    apply plugin: 'com.android.library'
-} else {
-    apply plugin: 'com.android.application'
-}
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
-
 
 
     defaultConfig {
@@ -23,7 +18,7 @@ android {
 //        ARouter配置
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
             }
         }
     }
@@ -40,9 +35,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api project(':base')
+    implementation project(':base')
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

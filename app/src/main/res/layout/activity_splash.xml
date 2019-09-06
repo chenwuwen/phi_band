@@ -11,16 +11,17 @@
         android:id="@+id/skipButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="10dp"
+        android:paddingHorizontal="5dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         app:color_normal="#412C2C2C"
-        app:corner="5dp"
+        app:corner="3dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:text="@string/skip_str"
         app:textColor="#FFF"
-        app:textSize="22sp" />
+        app:textSize="15sp"
+        tools:text="@string/skip_str"/>
 
     <TextView
         android:id="@+id/textView"

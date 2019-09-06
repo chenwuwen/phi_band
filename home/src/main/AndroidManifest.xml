@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.kanyun.phi_band.home">
+
+    <application>
+        <activity android:name="cn.kanyun.phi_band.home.ui.activity.HomeActivity"></activity>
+    </application>
+
+</manifest>
+
+

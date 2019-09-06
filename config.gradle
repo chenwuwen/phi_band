@@ -20,6 +20,7 @@ ext {
 
     dependentVersion = [
             roomVersion : '2.1.0',
+            retrofit2Version : '2.6.1',
     ]
     //这里直接使用了项目根目录下的gradle.properties文件中的配置项,需要注意的是String 类型的可以直接使用,其他类型的则不行
     isModule = IS_MODULE.toBoolean()

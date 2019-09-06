@@ -1,0 +1,84 @@
+// 判断是作为Application来运行还是作为Library来运行,isModule变量来自根目录下的config.gradle文件中,由于项目根目录下的build.gradle文件apply from 了config.gradle。所以子模块可以直接使用
+
+if (isModule) {
+    //作为组件运行
+    apply plugin: 'com.android.library'
+} else {
+    //作为独立App应用运行
+    apply plugin: 'com.android.application'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+
+    defaultConfig {
+        //如果是非独立模块(可独立安装并运行的)，则使用当前组件的包名
+        if (!isModule) {
+            applicationId "cn.kanyun.phi_band." + project.getName()
+        }
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
+
+//        设置支持dataBinding,这样就引入了DataBinding
+        dataBinding {
+            enabled = true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    Android Studio 默认 library 的所有的 resource 为 public,所以在模块化开发过程中总会遇到资源冲突问题,添加 resourcePrefix , 则所有的资源须以此 prefix 开头，否则报错
+    resourcePrefix('home_resources_prefix_')
+
+//    根据isModule来选择不同的主清单文件
+    sourceSets {
+        main {
+            if (isModule) {
+//                如果是作为module来运行,则打包该路径下的配置文件,这个配置文件下是没有入口Activity的
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+//                如果是作为application来运行,则打包该路径下的配置文件,这个配置文件下是有入口Activity的
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+                java {
+                    //正式版本时，排除alone文件夹下所有调试文件
+                    exclude 'src/main/module/**'
+                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':base')
+    implementation project(':common')
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    ARouter 依赖，需要注意的是api要与compiler匹配使用，均使用最新版可以保证兼容,在需要被跳转的模块中添加,只在base模块下加是不行的,主要是annotationProcessor这一行
+    implementation rootProject.ext.dependencies["arouter-api"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+}

@@ -17,11 +17,11 @@ android {
         }
 
 //        ARouter配置
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+//            }
+//        }
     }
 
 //    buildTypes主要就是配置发布版本和测试版本的一些配置以及混淆文件等
@@ -39,30 +39,29 @@ android {
     productFlavors {
 
     }
+//    是禁止gradle检查PNG格式图片的合法性
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     if (isModule) {
-        api project(':device')
-        api project(':common')
-        api project(':sport')
-        api project(':personal')
-        api project(':rungroup')
-        api project(':dynamic')
-        api project(':base')
+        implementation project(':device')
+        implementation project(':home')
+        implementation project(':common')
+        implementation project(':sport')
+        implementation project(':personal')
+        implementation project(':rungroup')
+        implementation project(':dynamic')
+        implementation project(':base')
     }
-    implementation rootProject.ext.dependencies["appcompat-androidx"]
-    implementation rootProject.ext.dependencies["constraintlayout"]
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-//    替代EventBus的消息传递组件 https://github.com/JeremyLiao/LiveEventBus
-    implementation rootProject.ext.dependencies["live-event-bus-x"]
+
 
 //    二维码
     implementation rootProject.ext.dependencies["zxing"]
@@ -72,15 +71,10 @@ dependencies {
 
 
 
-//    打印日志
-    implementation rootProject.ext.dependencies["logger"]
-
-//    图标库
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     implementation 'top.androidman:superbutton:1.0.1'
 
-    implementation 'com.google.android.material:material:1.1.0-alpha09'
+
 
 
 }

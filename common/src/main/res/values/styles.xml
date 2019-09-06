@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="onePixel">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowNoDisplay">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="GrayBGTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/link_common_bg_share</item>
+    </style>
+
+    <style name="link_personal_PersonInfoModify" parent="@style/AppBaseTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light" />
+
+    <style name="EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:textCursorDrawable">@drawable/link_common_edit_cursor</item>
+    </style>
+
+    <style name="WebCustomDialog" parent="@style/Theme.AppCompat">
+        <item name="android:windowBackground">@color/link_common_bg_white</item>
+        <item name="android:editTextStyle">@style/EditTextStyle</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+    </style>
+
+    <style name="WhiteBGTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/dynamic_white</item>
+    </style>
+
+    <style name="GroupDetailsTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:selectableItemBackground">@color/dynamic_white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TransparentTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/dynamic_popupWinBg</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="SearchWhiteBGTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/link_common_white</item>
+    </style>
+
+    <style name="tp_app_theme.NoActionBar" parent="@style/tp_app_theme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="tp_app_theme" parent="@style/Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/tp_color_primary</item>
+        <item name="colorPrimaryDark">@color/tp_color_primary_dark</item>
+        <item name="colorAccent">@color/tp_color_accent</item>
+    </style>
+
+</resources>

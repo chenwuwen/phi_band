@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">看云运动</string>
-    <string name="skip_str">跳过：</string>
+    <string name="skip_str">跳过:</string>
     <string name="tab_home_str">首页</string>
     <string name="tab_sport_circle_str">运动圈</string>
     <string name="tab_device_str">设备</string>

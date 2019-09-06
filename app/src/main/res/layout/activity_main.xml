@@ -10,22 +10,31 @@
 
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager_content"
+            android:id="@+id/app_view_pager_content"
             android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/foot_tab_layout" />
 
         <!--app:tabIndicatorHeight="0dp" 控制TabLayout线的粗细-->
         <!--app:tabRippleColor="@android:color/transparent"控制tab点击阴影颜色-->
+        <!-- app:tabMaxWidth="0dp" 解决tab宽度分布不均匀-->
         <com.google.android.material.tabs.TabLayout
+            android:paddingVertical="5dp"
             android:id="@+id/foot_tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.08"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:tabIndicatorHeight="0dp"
+            app:tabMaxWidth="0dp"
             app:tabMode="fixed"
-            app:tabRippleColor="@android:color/transparent" />
+            app:tabGravity="fill"
+            app:tabRippleColor="@android:color/transparent"
+             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

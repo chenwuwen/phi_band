@@ -1,9 +1,6 @@
-// 判断是作为Application来运行还是作为Library来运行,isModule变量来自根目录下的config.gradle文件中,由于项目根目录下的build.gradle文件apply from 了config.gradle。所以子模块可以直接使用
-if (isModule) {
-    apply plugin: 'com.android.library'
-} else {
-    apply plugin: 'com.android.application'
-}
+//由于base模块的特殊性,所以它肯定是作为Library来运行的
+apply plugin: 'com.android.library'
+
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -40,27 +37,61 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    api 'androidx.appcompat:appcompat:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-//    ARouter 依赖，需要注意的是api要与compiler匹配使用，均使用最新版可以保证兼容
+    api 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    api rootProject.ext.dependencies["appcompat-androidx"]
+    api rootProject.ext.dependencies["constraintlayout"]
+
+    api 'androidx.navigation:navigation-fragment:2.0.0'
+    api 'androidx.navigation:navigation-ui:2.0.0'
+
+//    ARouter 依赖，需要注意的是api要与compiler匹配使用，均使用最新版可以保证兼容,在需要被跳转的模块中添加,只在base模块下加是不行的,主要是annotationProcessor这一行
     api rootProject.ext.dependencies["arouter-api"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 
 //    Room库
-    api   group: 'androidx.room', name: 'room-runtime', version: rootProject.dependentVersion.roomVersion
-    annotationProcessor   group: 'androidx.room', name: 'room-compiler', version: rootProject.dependentVersion.roomVersion
-    androidTestImplementation  group: 'androidx.room', name: 'room-testing', version: rootProject.dependentVersion.roomVersion
+    api group: 'androidx.room', name: 'room-runtime', version: rootProject.dependentVersion.roomVersion
+    annotationProcessor group: 'androidx.room', name: 'room-compiler', version: rootProject.dependentVersion.roomVersion
+    androidTestImplementation group: 'androidx.room', name: 'room-testing', version: rootProject.dependentVersion.roomVersion
 
-    implementation 'top.androidman:superbutton:1.1.1'
+//    SuperTextView是一个功能强大的View，可以满足日常大部分布局样式
+    api 'com.github.lygttpod:SuperTextView:2.2.4'
 
 //    retrofit网络请求框架
-    api group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.6.1'
+    api group: 'com.squareup.retrofit2', name: 'retrofit', version: rootProject.dependentVersion.retrofit2Version
+    api group: 'com.squareup.retrofit2', name: 'converter-jackson', version: rootProject.dependentVersion.retrofit2Version
+//    retrofit2依赖okhttp
+    api group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.1.0'
 
 //    KV数据库
     api 'com.snappydb:snappydb-lib:0.5.2'
     api 'com.esotericsoftware.kryo:kryo:2.24.0'
 
+//    logger工具库
+    api 'com.orhanobut:logger:2.2.0'
+
+//    强大的Android工具类：https://github.com/Blankj/AndroidUtilCode  http://www.apkbus.com/thread-593099-1-4.html
+    api 'com.blankj:utilcodex:1.24.7'
+
+    //    打印日志
+    api rootProject.ext.dependencies["logger"]
+
+//    图标库
+    api 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //    替代EventBus的消息传递组件 https://github.com/JeremyLiao/LiveEventBus
+    api rootProject.ext.dependencies["live-event-bus-x"]
+
+    //    这是一个开源的dialog组件(这个组件的2.x/3.x版本只适用于Kotlin)
+    api 'com.afollestad.material-dialogs:core:0.9.6.0'
+    api 'com.afollestad.material-dialogs:commons:0.9.6.0'
+
+    api 'com.google.android.material:material:1.1.0-alpha09'
+
+//    用于Android蓝牙BLE设备通信，支持设备扫描，连接，读写，通知 https://github.com/dingjikerbo/Android-BluetoothKit
+    api 'com.inuker.bluetooth:library:1.4.0'
 }

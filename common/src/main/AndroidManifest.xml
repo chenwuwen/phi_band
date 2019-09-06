@@ -51,7 +51,9 @@
             android:theme="@style/GrayBGTheme" />
 
         <service android:name="cn.kanyun.phi_band.common.transaction.download.UpdateVersionService" />
-        <service android:name="cn.kanyun.phi_band.common.transaction.bluetooth.BluetoothService" />
+<!--        <service android:name="cn.kanyun.phi_band.common.transaction.bluetooth.BluetoothService" />-->
+<!--        使用的蓝牙库依赖https://github.com/dingjikerbo/Android-BluetoothKit-->
+        <service android:name="com.inuker.bluetooth.library.BluetoothService" />
         <service android:name="cn.kanyun.phi_band.common.transaction.http.SyncService" />
 
         <receiver android:name="cn.kanyun.phi_band.common.transaction.BootReceiver">
@@ -78,7 +80,7 @@
         </receiver>
         <receiver android:name="cn.kanyun.phi_band.common.transaction.bluetooth.AutoConnectReceiver">
             <intent-filter>
-                <action android:name="com.phicomm.link.AUTO_CONNECT" />
+                <action android:name="cn.kanyun.phi_band.AUTO_CONNECT" />
             </intent-filter>
         </receiver>
         <receiver android:name="cn.kanyun.phi_band.common.transaction.NotificationReceiver" />
