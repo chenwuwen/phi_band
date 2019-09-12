@@ -1,5 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.kanyun.phi_band.common" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.kanyun.phi_band.common">
+
+<!--    如果你想声明你的应用程序只能在支持BLE的设备上运行，可以将下面声明包含进你的应用程序manifest文件中-->
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+
 
     <application>
 
@@ -7,7 +12,7 @@
         <receiver android:name="cn.kanyun.phi_band.common.transaction.network.NetworkConnectChangedReceiver" />
 
         <activity android:name="cn.kanyun.phi_band.common.ui.widgets.clipImage.ClipImageActivity" />
-        <activity android:name="cn.kanyun.phi_band.common.ui.WebViewActivity" />
+        <activity android:name="cn.kanyun.phi_band.common.ui.activity.WebViewActivity" />
         <activity
             android:name="cn.kanyun.phi_band.common.transaction.push.SswoActivity"
             android:excludeFromRecents="true"
@@ -42,10 +47,17 @@
         </service>
 
         <activity
-            android:name="cn.kanyun.phi_band.common.ui.QrScannerActivity"
+            android:name="cn.kanyun.phi_band.common.ui.activity.QrScannerActivity"
             android:theme="@style/AppTheme" />
+
+<!--        Zxing Activity配置-->
         <activity
-            android:name="cn.kanyun.phi_band.common.ui.ShareActivity"
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+
+        <activity
+            android:name="cn.kanyun.phi_band.common.ui.activity.ShareActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/GrayBGTheme" />
@@ -54,6 +66,9 @@
 <!--        <service android:name="cn.kanyun.phi_band.common.transaction.bluetooth.BluetoothService" />-->
 <!--        使用的蓝牙库依赖https://github.com/dingjikerbo/Android-BluetoothKit-->
         <service android:name="com.inuker.bluetooth.library.BluetoothService" />
+
+        <service android:name="cn.kanyun.phi_band.common.transaction.bluetooth.BluetoothService" />
+
         <service android:name="cn.kanyun.phi_band.common.transaction.http.SyncService" />
 
         <receiver android:name="cn.kanyun.phi_band.common.transaction.BootReceiver">

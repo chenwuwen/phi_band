@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.kanyun.phi_band.device">
 
+
     <application>
-        <activity android:name=".ui.activity.DeviceActivity"></activity>
+        <activity android:name=".ui.activity.DeviceSettingActivity"></activity>
+        <activity android:name=".ui.activity.DeviceActivity" />
         <activity android:name=".ui.binding.DeviceBindingOptionsActivity" />
         <activity android:name=".ui.binding.DeviceQrBindingOptionsActivity" />
         <activity
@@ -42,6 +44,7 @@
                 <action android:name="com.phicomm.link.common.util.WeatherDataUtils.WEATHER_SYNC" />
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>

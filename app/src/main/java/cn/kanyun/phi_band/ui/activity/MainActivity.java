@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = activityMainBinding.appViewPagerContent;
 //        创建ViewPagerAdapter
         MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter(fragmentManager);
-//        给viewPager赋值adapter
+//        给viewPager赋值adapter(设置了Adapter默认显示第一个tab)
         viewPager.setAdapter(myViewPagerAdapter);
 //        设置预加载页面数量的方法
         viewPager.setOffscreenPageLimit(4);
@@ -62,15 +62,13 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 //        显示tab布局
         initTab();
-        Fragment fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.HOME_HOME_FRAGMENT_PATH).navigation();
-        if (fragment == null) {
-            fragment = new Fragment();
-        }
-//        Fragment fragment1 = new HomeFragment();
-//        fragmentManager.beginTransaction().replace(R.id.ssss,fragment1).commit();
-//        fragmentManager.beginTransaction().show(fragment1);
-        FragmentUtils.add(fragmentManager, fragment,R.id.app_view_pager_content);
-        FragmentUtils.show(fragment);
+//        由于设置了Adapter,默认会显示第一个tab
+//        Fragment fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.HOME_HOME_FRAGMENT_PATH).navigation();
+//        if (fragment == null) {
+//            fragment = new Fragment();
+//        }
+//        FragmentUtils.add(fragmentManager, fragment,R.id.app_view_pager_content);
+//        FragmentUtils.show(fragment);
     }
 
 

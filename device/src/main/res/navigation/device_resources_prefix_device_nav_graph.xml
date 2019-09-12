@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/device_nav_graph.xml"
+    android:id="@+id/device_resources_prefix_device_nav_graph"
     app:startDestination="@id/device_resources_prefix_device_fragment">
 
     <fragment
         android:id="@+id/device_resources_prefix_device_fragment"
         android:name="cn.kanyun.phi_band.device.ui.fragment.DeviceFragment"
-        android:label="DeviceFragment" >
-
-        <action
-            android:id="@+id/device_resources_prefix_action_device_resources_prefix_device_fragment_to_device_resources_prefix_device_setting_fragment"
-            app:destination="@id/device_resources_prefix_device_setting_fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/device_resources_prefix_device_setting_fragment"
-        android:name="cn.kanyun.phi_band.device.ui.fragment.DeviceSettingFragment"
-        android:label="DeviceSettingFragment" />
+        android:label="DeviceFragment" />
 </navigation>

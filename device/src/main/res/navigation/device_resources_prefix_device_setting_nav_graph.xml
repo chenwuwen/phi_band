@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/device_resources_prefix_device_setting_nav_graph.xml"
+    app:startDestination="@id/device_resources_prefix_device_setting_fragment">
+
+    <fragment
+        android:id="@+id/device_resources_prefix_device_setting_fragment"
+        android:name="cn.kanyun.phi_band.device.ui.fragment.DeviceSettingFragment"
+        android:label="DeviceSettingFragment" >
+        <action
+            android:id="@+id/device_resources_prefix_action__device_setting_fragment_to_device_alarm_setting_fragment"
+            app:destination="@id/device_resources_prefix_alarm_setting_fragment" />
+        <action
+            android:id="@+id/device_resources_prefix_action_device_setting_fragment_to_device_detail_fragment"
+            app:destination="@id/device_resources_prefix_device_detail_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/device_resources_prefix_alarm_setting_fragment"
+        android:name="cn.kanyun.phi_band.device.ui.fragment.AlarmSettingFragment"
+        android:label="AlarmSettingFragment" />
+    <fragment
+        android:id="@+id/device_resources_prefix_device_detail_fragment"
+        android:name="cn.kanyun.phi_band.device.ui.fragment.DeviceDetailFragment"
+        android:label="DeviceDetailFragment" />
+</navigation>

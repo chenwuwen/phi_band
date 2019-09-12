@@ -42,6 +42,12 @@ android {
 //    是禁止gradle检查PNG格式图片的合法性
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
+
+    //    JDK编译设置
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -61,16 +67,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-
-//    二维码
-    implementation rootProject.ext.dependencies["zxing"]
-
-//    定制不一样的Toast： https://github.com/GrenderG/Toasty
-    implementation 'com.github.GrenderG:Toasty:1.4.2'
-
-
-
 
     implementation 'top.androidman:superbutton:1.0.1'
 

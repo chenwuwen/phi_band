@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:stv="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,17 +8,16 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/device_resources_prefix_framelayout"
+        android:id="@+id/dynamic_resources_prefix_dynamic_fragment"
         android:layout_width="match_parent"
-        android:background="@color/default_background"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.DynamicFragment">
 
-        <com.allen.library.SuperTextView
-            android:id="@+id/device_resources_prefix_connect_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            stv:sCenterTopTextString="@string/link_device_connect_band"
+        <TextView
+            android:id="@+id/dynamic_resources_prefix_textview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Hello"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

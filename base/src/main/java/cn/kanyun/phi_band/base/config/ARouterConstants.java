@@ -26,4 +26,14 @@ public class ARouterConstants {
      * personal模块下的PersonalFragment
      */
     public static final String PERSONAL_PERSONAL_FRAGMENT_PATH = "/personal/main/personal";
+
+    /**
+     * common模块下的二维码扫描 QrScannerActivity
+     */
+    public static final String COMMON_QRSCANNER_ACTIVITY_PATH = "/common/main/qrscanner";
+
+    /**
+     * device模块下 DeviceSettingActivity
+     */
+    public static final String DEVICE_DEVICE_SETTING_ACTIVITY_PATH = "/device/main/device/setting";
 }

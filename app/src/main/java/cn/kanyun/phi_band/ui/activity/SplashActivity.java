@@ -23,7 +23,7 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * 跳过倒计时提示5秒
      */
-    private int recLen = 2;
+    private int countDownLen = 2;
 
     /**
      * 跳过按钮
@@ -42,7 +42,10 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
         getWindow().setFlags(flag, flag);
         setContentView(R.layout.activity_splash);
         initView();
-        timer.schedule(task, 1000, 1000);//等待时间一秒，停顿时间一秒
+//        task-所要安排执行的任务
+//        delay-首次执行任务的时间
+//        period-执行一次task的时间间隔
+        timer.schedule(task, 0, 1000);
         /**
          * 正常情况下不点击跳过
          */
@@ -55,7 +58,7 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 finish();
             }
-        }, 5000);//延迟5S后发送handler信息
+        }, countDownLen * 1000 + 500);//延迟N秒后发送handler信息(跳转到MainActivity)
 
     }
 
@@ -74,11 +77,13 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
                 @Override
                 public void run() {
                     skipButton.setVisibility(View.VISIBLE);
-                    skipButton.setText(getString(R.string.skip_str) + recLen);
-                    recLen--;
-                    if (recLen < 0) {
+                    skipButton.setText(getString(R.string.skip_str) + countDownLen);
+                    countDownLen--;
+                    if (countDownLen < 0) {
+//                        取消定时任务,也就是这个任务不会执行了
                         timer.cancel();
-                        skipButton.setVisibility(View.GONE);//倒计时到0隐藏字体
+                        //倒计时到0隐藏字体
+//                        skipButton.setVisibility(View.GONE);
                     }
                 }
             });

@@ -81,4 +81,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    ARouter 依赖，需要注意的是api要与compiler匹配使用，均使用最新版可以保证兼容,在需要被跳转的模块中添加,只在base模块下加是不行的,主要是annotationProcessor这一行
+    implementation rootProject.ext.dependencies["arouter-api"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }

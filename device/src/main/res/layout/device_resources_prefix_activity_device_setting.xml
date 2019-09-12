@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.DeviceSettingActivity">
 
     <fragment
-        android:id="@+id/device_nav"
+        android:id="@+id/device_setting_nav"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/device_resources_prefix_device_nav_graph" />
-
+        app:navGraph="@navigation/device_resources_prefix_device_setting_nav_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

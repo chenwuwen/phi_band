@@ -40,29 +40,29 @@ public class TabSwitchListener implements TabLayout.OnTabSelectedListener {
 //        textView.setTextColor(context.getColor(R.color.yellow_color));
         Drawable drawable = imageView.getDrawable();
         drawable.setTint(Color.parseColor("#FFE64538"));
-        Fragment fragment;
-        int index = tab.getPosition();
-        switch (index) {
-            case 0:
-//                首页Tab
-                fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.HOME_HOME_FRAGMENT_PATH).navigation();
-                FragmentUtils.showHide(fragment);
-                break;
-            case 1:
-//                运动圈Tab
-                fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.DYNAMIC_DYNAMIC_FRAGMENT_PATH).navigation();
-                FragmentUtils.showHide(fragment);
-                break;
-            case 2:
-//                设备Tab
-                fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.DEVICE_DEVICE_FRAGMENT_PATH).navigation();
-                FragmentUtils.showHide(fragment);
-                break;
-            default:
-//                我的Tab
-                fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.PERSONAL_PERSONAL_FRAGMENT_PATH).navigation();
-                FragmentUtils.showHide(fragment);
-        }
+//        Fragment fragment;
+//        int index = tab.getPosition();
+//        switch (index) {
+//            case 0:
+////                首页Tab
+//                fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.HOME_HOME_FRAGMENT_PATH).navigation();
+//                FragmentUtils.show(fragment);
+//                break;
+//            case 1:
+////                运动圈Tab
+//                fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.DYNAMIC_DYNAMIC_FRAGMENT_PATH).navigation();
+//                FragmentUtils.show(fragment);
+//                break;
+//            case 2:
+////                设备Tab
+//                fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.DEVICE_DEVICE_FRAGMENT_PATH).navigation();
+//                FragmentUtils.show(fragment);
+//                break;
+//            default:
+////                我的Tab
+//                fragment = (Fragment) ARouter.getInstance().build(ARouterConstants.PERSONAL_PERSONAL_FRAGMENT_PATH).navigation();
+//                FragmentUtils.show(fragment);
+//        }
     }
 
     /**

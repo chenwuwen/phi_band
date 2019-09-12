@@ -9,15 +9,21 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.ToastUtils;
+import com.orhanobut.logger.Logger;
 
 import cn.kanyun.phi_band.base.config.ARouterConstants;
 import cn.kanyun.phi_band.device.R;
 import cn.kanyun.phi_band.device.databinding.DeviceResourcesPrefixFragmentDeviceBinding;
+import cn.kanyun.phi_band.device.ui.activity.DeviceActivity;
 import cn.kanyun.phi_band.device.ui.viewmodel.DeviceViewModel;
 
 
@@ -43,11 +49,15 @@ public class DeviceFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         deviceBinding = DataBindingUtil.inflate(inflater, R.layout.device_resources_prefix_fragment_device, container, false);
-
-        deviceBinding.connectHistory.setOnClickListener(v -> {
-            NavController navController = Navigation.findNavController(v);
-            navController.navigate(R.id.device_resources_prefix_action_device_resources_prefix_device_fragment_to_device_resources_prefix_device_setting_fragment);
+//        点击已绑定的设备,跳转到设备设置页面
+        deviceBinding.connectHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                跳转时,传递Int类型的参数,这个值是被点击的设备的ID(在SQLite中保存)
+                ARouter.getInstance().build(ARouterConstants.DEVICE_DEVICE_SETTING_ACTIVITY_PATH).withInt("deviceId", 1).navigation();
+            }
         });
+
 
         return deviceBinding.getRoot();
     }
@@ -57,6 +67,7 @@ public class DeviceFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         deviceViewModel = ViewModelProviders.of(this).get(DeviceViewModel.class);
         // TODO: Use the ViewModel
+
     }
 
 }

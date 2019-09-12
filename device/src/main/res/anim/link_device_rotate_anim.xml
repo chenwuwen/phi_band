@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ResourceName">
     <rotate
-        android:drawable="@drawable/ldevice_resources_prefix_ink_common_device_state_icon_connecting"
+        android:drawable="@drawable/device_resources_prefix_ink_common_device_state_icon_connecting"
         android:duration="1500"
         android:fromDegrees="0.0"
         android:interpolator="@android:anim/linear_interpolator"

@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.google.zxing.integration.android.IntentIntegrator;
 
 import cn.kanyun.phi_band.base.config.ARouterConstants;
 import cn.kanyun.phi_band.home.R;
@@ -39,6 +41,13 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         homeBinding = DataBindingUtil.inflate(inflater, R.layout.home_resources_prefix_fragment_home, container, false);
+//        二维码扫描
+        homeBinding.appHomeQrCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build(ARouterConstants.COMMON_QRSCANNER_ACTIVITY_PATH).withString("from", "HomeFragment").navigation();
+            }
+        });
         return homeBinding.getRoot();
     }
 

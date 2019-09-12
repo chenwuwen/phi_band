@@ -53,10 +53,8 @@ public class BluetoothService extends Service {
     // 描述标识
     private final UUID DESCRIPTOR_UUID = UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
 
-    // 服务相关
-    private final IBinder mBinder = new LocalBinder();
 
-    public class LocalBinder extends Binder {
+    public class BluetoothBinder extends Binder {
         public BluetoothService getService() {
             return BluetoothService.this;
         }
@@ -64,7 +62,7 @@ public class BluetoothService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        return mBinder;
+        return new BluetoothBinder();
     }
 
     @Override

@@ -2,10 +2,10 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/dynamic_resources_prefix_dynamic_nav_graph.xml"
-    app:startDestination="@id/dynamic_resources_prefix_dynamicfragment">
+    app:startDestination="@id/dynamic_resources_prefix_dynamic_fragment">
 
     <fragment
-        android:id="@+id/dynamic_resources_prefix_dynamicfragment"
+        android:id="@+id/dynamic_resources_prefix_dynamic_fragment"
         android:name="cn.kanyun.phi_band.dynamic.ui.fragment.DynamicFragment"
         android:label="DynamicFragment" />
 </navigation>

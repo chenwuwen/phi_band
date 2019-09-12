@@ -32,6 +32,12 @@ android {
         }
     }
 
+//    JDK编译设置
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -60,6 +66,8 @@ dependencies {
 
 //    SuperTextView是一个功能强大的View，可以满足日常大部分布局样式
     api 'com.github.lygttpod:SuperTextView:2.2.4'
+//    好用的按钮组件：https://github.com/ansnail/SuperButton
+    api 'top.androidman:superbutton:1.0.1'
 
 //    retrofit网络请求框架
     api group: 'com.squareup.retrofit2', name: 'retrofit', version: rootProject.dependentVersion.retrofit2Version
@@ -94,4 +102,13 @@ dependencies {
 
 //    用于Android蓝牙BLE设备通信，支持设备扫描，连接，读写，通知 https://github.com/dingjikerbo/Android-BluetoothKit
     api 'com.inuker.bluetooth:library:1.4.0'
+//    https://github.com/Jasonchenlijian/FastBle
+    api 'com.clj.fastble:FastBleLib:2.3.4'
+
+    //    二维码
+    api rootProject.ext.dependencies["zxing"]
+    api rootProject.ext.dependencies["zxing-android-embedded"]
+
+//    定制不一样的Toast： https://github.com/GrenderG/Toasty
+    api 'com.github.GrenderG:Toasty:1.4.2'
 }
